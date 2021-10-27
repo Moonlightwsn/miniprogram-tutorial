@@ -1,11 +1,14 @@
-.messages .weui-cells {
-    margin-top: 0;
-}
 .messages .weui-cells::before {
     border-top: 0;
 }
 .messages .weui-cells::after {
     border-bottom: 0;
+}
+.slide-message .action {
+    font-size: 14px;
+}
+.slide-message .action::before {
+    border-left: 0;
 }
 .slide-message .hide-message .weui-slideview__btn {
     background: #faad14;
@@ -19,20 +22,48 @@
 .messages .message::before {
     border-top: 0;
 }
+.messages .message .avatar, .messages .message .content, .messages .message .tail {
+    height: 42px;
+}
+.messages .message .avatar-wrapper {
+    position: relative;
+}
+.messages .message .unread {
+    position: absolute;
+}
+.messages .message .unread.dot {
+    top: -3px;
+    right: -3px;
+}
+.messages .message .unread.number {
+    top: -5px;
+    right: -5px;
+}
 .messages .message .avatar {
-    width: 36px;
-    height: 36px;
+    width: 42px;
     border-radius: 6px;
 }
-.messages .message .message-content {
-    margin-left: 12px;
-    height: 36px;
-    font-weight: normal;
+.messages .message .content-wrapper {
+    display: flex;
 }
-.messages .message .message-content .friend-title {
+.messages .message .content {
+    margin-left: 12px;
+    font-weight: normal;
+    flex-grow: 1;
+}
+.messages .message .content .friend-title {
     font-size: 14px;
 }
-.messages .message .message-content .last-message {
+.messages .message .content .last-message {
     font-size: 12px;
-    color: rgba(0,0,0,0.45);
+    color: rgba(0,0,0,0.35);
+}
+.messages .message .tail {
+    flex-shrink: 0;
+    width: 64px;
+    display: flex;
+    flex-direction: column;
+    font-size: 11px;
+    color: rgba(0,0,0,0.35);
+    text-align: right;
 }

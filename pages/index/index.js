@@ -8,57 +8,71 @@ Page({
             friendID: '100001',
             friendTitle: '程然',
             lastMessage: '等下你去看开幕式么?',
-            friendAvatar: '/images/avatar/avatar_chengran.jpeg'
+            friendAvatar: '/images/avatar/avatar_chengran.jpeg',
+            time: '晚上8:20',
+            unread: 3,
         }, {
             friendID: '100002',
             friendTitle: '伟国',
             lastMessage: '[图片]',
-            friendAvatar: '/images/avatar/avatar_weiguo.jpeg'
+            friendAvatar: '/images/avatar/avatar_weiguo.jpeg',
+            time: '晚上8:20',
+            bellringOff: true,
+            unread: 10,
         }, {
             friendID: '100003',
             friendTitle: '广爷',
             lastMessage: '有熟悉NFT的吗？请教一个实物上链的手法',
-            friendAvatar: '/images/avatar/avatar_guangye.jpeg'
+            friendAvatar: '/images/avatar/avatar_guangye.jpeg',
+            time: '晚上8:20',
+            unread: 5,
         }, {
             friendID: '100004',
             friendTitle: '智博',
             lastMessage: '你这放的是ppt吗',
-            friendAvatar: '/images/avatar/avatar_zhibo.jpeg'
+            friendAvatar: '/images/avatar/avatar_zhibo.jpeg',
+            time: '晚上8:20',
         }, {
             friendID: '100005',
             friendTitle: '斌斌',
             lastMessage: '笔直向上，一天11倍',
-            friendAvatar: '/images/avatar/avatar_binbin.jpeg'
+            friendAvatar: '/images/avatar/avatar_binbin.jpeg',
+            time: '晚上8:20',
         }, {
             friendID: '100006',
             friendTitle: '守毅',
             lastMessage: '卧槽，忘记打卡了',
-            friendAvatar: '/images/avatar/avatar_shouyi.jpeg'
+            friendAvatar: '/images/avatar/avatar_shouyi.jpeg',
+            time: '晚上8:20',
         }, {
             friendID: '100007',
             friendTitle: '峰峰',
             lastMessage: '我第几次了[看]今天请大家喝下午茶',
-            friendAvatar: '/images/avatar/avatar_fengfeng.jpeg'
+            friendAvatar: '/images/avatar/avatar_fengfeng.jpeg',
+            time: '晚上8:20',
         }, {
             friendID: '100008',
             friendTitle: '晨阳',
             lastMessage: '[表情]',
-            friendAvatar: '/images/avatar/avatar_chenyang.jpeg'
+            friendAvatar: '/images/avatar/avatar_chenyang.jpeg',
+            time: '晚上8:20',
         }, {
             friendID: '100009',
             friendTitle: '光瑞',
             lastMessage: '[表情]',
-            friendAvatar: '/images/avatar/avatar_guangrui.jpeg'
+            friendAvatar: '/images/avatar/avatar_guangrui.jpeg',
+            time: '晚上8:20',
         }],
         messageActions: [{
             text: '标记未读',
-            extClass: 'set-unread',
+            extClass: 'action set-unread',
         }, {
             text: '不显示',
-            extClass: 'hide-message',
+            extClass: 'action hide-message',
         }, {
             text: '删除',
             type: 'warn',
+            extClass: 'action',
         }],
     },
 

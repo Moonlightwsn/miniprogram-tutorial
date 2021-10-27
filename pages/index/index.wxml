@@ -3,10 +3,24 @@
         <mp-cells extClass="messages">
             <mp-slideview wx:for="{{messages}}" wx:key="friendID" extClass="slide-message" buttons="{{messageActions}}">
                 <mp-cell extClass="message">
-                    <image class="avatar" slot="icon" src="{{item.friendAvatar}}" />
-                    <view class="message-content">
-                        <view class="friend-title">{{item.friendTitle}}</view>
-                        <view class="last-message">{{item.lastMessage}}</view>
+                    <view slot="title" class="avatar-wrapper">
+                        <image class="avatar" slot="icon" src="{{item.friendAvatar}}" />
+                        <mp-badge wx:if="{{item.unread > 0}}" extClass="unread {{item.bellringOff ? 'dot' : 'number'}}" content="{{!item.bellringOff ? item.unread : ''}}"/>
+                    </view>
+                    <view class="content-wrapper">
+                        <view class="content">
+                            <view class="friend-title">{{item.friendTitle}}</view>
+                            <view class="last-message">
+                                <text>{{item.lastMessage}}</text>
+                            </view>
+                        </view>
+                        <view class="tail">
+                            <view class="time">{{item.time}}</view>
+                            <view style="flex-grow: 1;"></view>
+                            <view wx:if="{{item.bellringOff}}" class="status">
+                                <mp-icon icon="bellring-off" size="{{12}}" color="rgba(0,0,0,0.45)"></mp-icon>
+                            </view>
+                        </view>
                     </view>
                 </mp-cell>
             </mp-slideview>

@@ -11,7 +11,11 @@
     "iconPathWechat": "images/icon_wechat.png",
     "selectedIconPathWechat": "images/icon_wechat_HL.png",
     "iconPathContacts": "images/icon_contacts.png",
-    "selectedIconPathContacts": "images/icon_contacts_HL.png"
+    "selectedIconPathContacts": "images/icon_contacts_HL.png",
+    "iconPathExplore": "images/icon_explore.png",
+    "selectedIconPathExplore": "images/icon_explore_HL.png",
+    "iconPathUser": "images/icon_user.png",
+    "selectedIconPathUser": "images/icon_user_HL.png"
   },
   "dark": {
     "navigationBarTextStyle": "white",
@@ -25,6 +29,10 @@
     "iconPathWechat": "images/icon_wechat_dark.png",
     "selectedIconPathWechat": "images/icon_wechat_dark_HL.png",
     "iconPathContacts": "images/icon_contacts_dark.png",
-    "selectedIconPathContacts": "images/icon_contacts_dark_HL.png"
+    "selectedIconPathContacts": "images/icon_contacts_dark_HL.png",
+    "iconPathExplore": "images/icon_explore_dark.png",
+    "selectedIconPathExplore": "images/icon_explore_dark_HL.png",
+    "iconPathUser": "images/icon_user_dark.png",
+    "selectedIconPathUser": "images/icon_user_dark_HL.png"
   }
 }
