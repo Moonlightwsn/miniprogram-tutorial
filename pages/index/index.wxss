@@ -1,0 +1,38 @@
+.messages .weui-cells {
+    margin-top: 0;
+}
+.messages .weui-cells::before {
+    border-top: 0;
+}
+.messages .weui-cells::after {
+    border-bottom: 0;
+}
+.slide-message .hide-message .weui-slideview__btn {
+    background: #faad14;
+}
+.slide-message .set-unread .weui-slideview__btn {
+    background: #096dd9;
+}
+.messages .message {
+    padding: 8px 16px;
+}
+.messages .message::before {
+    border-top: 0;
+}
+.messages .message .avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+}
+.messages .message .message-content {
+    margin-left: 12px;
+    height: 36px;
+    font-weight: normal;
+}
+.messages .message .message-content .friend-title {
+    font-size: 14px;
+}
+.messages .message .message-content .last-message {
+    font-size: 12px;
+    color: rgba(0,0,0,0.45);
+}

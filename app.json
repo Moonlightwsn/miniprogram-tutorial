@@ -1,0 +1,41 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/contacts/contacts"
+  ],
+  "usingComponents": {
+    "mp-cell": "weui-miniprogram/cell/cell",
+    "mp-cells": "weui-miniprogram/cells/cells",
+    "mp-slideview": "weui-miniprogram/slideview/slideview"
+  },
+  "window":{
+    "navigationBarTextStyle": "@navigationBarTextStyle",
+    "navigationBarTitleText": "微信",
+    "navigationBarBackgroundColor": "@navigationBarBackgroundColor",
+    "backgroundColor": "@backgroundColor"
+  },
+  "tabBar": {
+    "color": "@tabBarColor",
+    "selectedColor": "@tabBarSelectedColor",
+    "borderStyle": "@tabBarBorderStyle",
+    "backgroundColor": "@tabBarBackgroundColor",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "微信",
+      "iconPath": "@iconPathWechat",
+      "selectedIconPath": "@selectedIconPathWechat"
+    }, {
+      "pagePath": "pages/contacts/contacts",
+      "text": "通讯录",
+      "iconPath": "@iconPathContacts",
+      "selectedIconPath": "@selectedIconPathContacts"
+    }]
+  },
+  "style": "v2",
+  "themeLocation": "theme.json",
+  "sitemapLocation": "sitemap.json",
+  "darkmode": true,
+  "useExtendedLib": {
+    "weui": true
+  }
+}

@@ -1,0 +1,15 @@
+<view data-weui-theme="light">
+    <view class="messagesWrap">
+        <mp-cells extClass="messages">
+            <mp-slideview wx:for="{{messages}}" wx:key="friendID" extClass="slide-message" buttons="{{messageActions}}">
+                <mp-cell extClass="message">
+                    <image class="avatar" slot="icon" src="{{item.friendAvatar}}" />
+                    <view class="message-content">
+                        <view class="friend-title">{{item.friendTitle}}</view>
+                        <view class="last-message">{{item.lastMessage}}</view>
+                    </view>
+                </mp-cell>
+            </mp-slideview>
+        </mp-cells>
+    </view>
+</view>
