@@ -1,1 +1,42 @@
-<!--pages/explore/explore.wxml-->
+<view data-weui-theme="light">
+  <mp-cells extClass="classification">
+    <mp-cell extClass="item" link>
+      <image slot="title" class="title" src="/images/moments.png" />
+      <view>朋友圈</view>
+    </mp-cell>
+  </mp-cells>
+  <mp-cells extClass="classification">
+    <mp-cell extClass="item" link>
+      <image slot="title" class="title" src="/images/live.png" />
+      <view>直播</view>
+    </mp-cell>
+  </mp-cells>
+  <mp-cells extClass="classification">
+    <mp-cell extClass="item" link>
+      <image slot="title" class="title" src="/images/scan.png" />
+      <view>扫一扫</view>
+    </mp-cell>
+    <mp-cell extClass="item" link>
+      <image slot="title" class="title" src="/images/shake.png" />
+      <view>摇一摇</view>
+    </mp-cell>
+  </mp-cells>
+  <mp-cells extClass="classification">
+    <mp-cell extClass="item" link>
+      <image slot="title" class="title" src="/images/search.png" />
+      <view>搜一搜</view>
+    </mp-cell>
+  </mp-cells>
+  <mp-cells extClass="classification">
+    <mp-cell extClass="item" link>
+      <image slot="title" class="title" src="/images/nearby.png" />
+      <view>附近</view>
+    </mp-cell>
+  </mp-cells>
+  <mp-cells extClass="classification">
+    <mp-cell extClass="item" link>
+      <image slot="title" class="title" src="/images/mp.png" />
+      <view>小程序</view>
+    </mp-cell>
+  </mp-cells>
+</view>

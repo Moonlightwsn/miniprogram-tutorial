@@ -1,2 +1,56 @@
 <view data-weui-theme="light">
+  <view class="contacts-wrapper">
+    <mp-index-list list="{{friendList}}">
+      <view>
+        <mp-cells extClass="classification">
+          <mp-cell extClass="item">
+            <view slot="title" class="title friend">
+              <mp-icon style="display: inline-flex;" color="#fff" type="filled" size="{{18}}" icon="add-friends"></mp-icon>
+            </view>
+            <view>新的朋友</view>
+          </mp-cell>
+          <mp-cell extClass="item">
+            <view slot="title" class="title friend">
+              <mp-icon style="display: inline-flex;" color="#fff" type="filled" size="{{18}}" icon="comment"></mp-icon>
+            </view>
+            <view>仅聊天的朋友</view>
+          </mp-cell>
+          <mp-cell extClass="item">
+            <view slot="title" class="title group">
+              <mp-icon style="display: inline-flex;" color="#fff" type="filled" size="{{18}}" icon="group-detail"></mp-icon>
+            </view>
+            <view>群聊</view>
+          </mp-cell>
+          <mp-cell extClass="item">
+            <view slot="title" class="title tag">
+              <mp-icon style="display: inline-flex;" color="#fff" type="filled" size="{{18}}" icon="tag"></mp-icon>
+            </view>
+            <view>标签</view>
+          </mp-cell>
+          <mp-cell extClass="item">
+            <view slot="title" class="title tag">
+              <mp-icon style="display: inline-flex;" color="#fff" type="filled" size="{{18}}" icon="me"></mp-icon>
+            </view>
+            <view>公众号</view>
+          </mp-cell>
+        </mp-cells>
+        <text class="gap">我的企业及企业联系人</text>
+        <mp-cells extClass="classification">
+          <mp-cell extClass="item">
+            <view slot="title" class="title tag">
+              <mp-icon style="display: inline-flex;" color="#fff" type="filled" size="{{18}}" icon="contacts"></mp-icon>
+            </view>
+            <view>企业微信联系人</view>
+          </mp-cell>
+        </mp-cells>
+        <text class="gap">星标朋友</text>
+        <mp-cells extClass="classification">
+          <mp-cell extClass="item">
+            <image class="title" slot="icon" src="/images/avatar/avatar_fengfeng.jpeg" />
+            <view>峰峰</view>
+          </mp-cell>
+        </mp-cells>
+      </view>
+    </mp-index-list>
+  </view>
 </view>

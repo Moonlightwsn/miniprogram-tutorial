@@ -10,7 +10,8 @@
     "mp-cells": "weui-miniprogram/cells/cells",
     "mp-slideview": "weui-miniprogram/slideview/slideview",
     "mp-icon": "weui-miniprogram/icon/icon",
-    "mp-badge": "weui-miniprogram/badge/badge"
+    "mp-badge": "weui-miniprogram/badge/badge",
+    "mp-index-list": "miniprogram_npm/@miniprogram-component-plus/index-list/index"
   },
   "window": {
     "navigationBarTextStyle": "@navigationBarTextStyle",

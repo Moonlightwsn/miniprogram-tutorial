@@ -53,13 +53,13 @@ Page({
         }, {
             friendID: '100008',
             friendTitle: '晨阳',
-            lastMessage: '[表情]',
+            lastMessage: '[动画表情]',
             friendAvatar: '/images/avatar/avatar_chenyang.jpeg',
             time: '晚上8:20',
         }, {
             friendID: '100009',
             friendTitle: '光瑞',
-            lastMessage: '[表情]',
+            lastMessage: '[动画表情]',
             friendAvatar: '/images/avatar/avatar_guangrui.jpeg',
             time: '晚上8:20',
         }],

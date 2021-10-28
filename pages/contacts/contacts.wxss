@@ -1,1 +1,45 @@
 /* pages/contacts/contacts.wxss */
+.contacts-wrapper .index-group__title {
+  font-size: 12px;
+  color: rgba(0,0,0,0.65);
+}
+.contacts-wrapper .index-group__item {
+  background-color: #fff;
+}
+.contacts-wrapper .index-group__title, .contacts-wrapper .index-group__item {
+  padding-left: 18px;
+}
+.contacts-wrapper .index-group__title::after, .contacts-wrapper .index-group__item::after {
+  border-bottom: 0;
+}
+.contacts-wrapper .gap {
+  font-size: 12px;
+  margin-left: 16px;
+  color: rgba(0,0,0,0.65);
+}
+.classification .weui-cells::before {
+  border-top: 0;
+}
+.classification .item {
+  padding: 8px 16px;
+  font-size: 14px;
+}
+.classification .item .title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  text-align: center;
+}
+.classification .item .title.friend {
+  background-color: #fa8c16;
+}
+.classification .item .title.group {
+  background-color: #52c41a;
+}
+.classification .item .title.tag {
+  background-color: #1890ff;
+}

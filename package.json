@@ -1,0 +1,28 @@
+{
+  "name": "miniprogram-tutorial",
+  "version": "1.0.0",
+  "description": "微信小程序开发教程",
+  "main": "app.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Moonlightwsn/miniprogram-tutorial.git"
+  },
+  "keywords": [
+    "mp-tutorial"
+  ],
+  "author": "momo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Moonlightwsn/miniprogram-tutorial/issues"
+  },
+  "homepage": "https://github.com/Moonlightwsn/miniprogram-tutorial#readme",
+  "dependencies": {
+    "@miniprogram-component-plus/index-list": "^1.0.0"
+  }
+}

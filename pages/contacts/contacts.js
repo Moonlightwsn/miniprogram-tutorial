@@ -5,7 +5,55 @@ Page({
      * 页面的初始数据
      */
     data: {
-
+        friendList: [{
+            alpha: 'B',
+            subItems: [{
+                id: 'binbin',
+                name: '斌斌'
+            }],
+        }, {
+            alpha: 'C',
+            subItems: [{
+                id: 'chenyang',
+                name: '晨阳'
+            }, {
+                id: 'chengran',
+                name: '程然'
+            }],
+        }, {
+            alpha: 'F',
+            subItems: [{
+                id: 'fengfeng',
+                name: '峰峰'
+            }],
+        }, {
+            alpha: 'G',
+            subItems: [{
+                id: 'guangye',
+                name: '广爷'
+            }, {
+                id: 'guangrui',
+                name: '光瑞'
+            }],
+        }, {
+            alpha: 'S',
+            subItems: [{
+                id: 'shouyi',
+                name: '守毅',
+            }]
+        }, {
+            alpha: 'W',
+            subItems: [{
+                id: 'weiguo',
+                name: '伟国',
+            }]
+        }, {
+            alpha: 'Z',
+            subItems: [{
+                id: 'zhibo',
+                name: '智博',
+            }]
+        }]
     },
 
     /**

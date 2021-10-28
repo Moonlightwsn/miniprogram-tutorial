@@ -11,7 +11,7 @@
                         <view class="content">
                             <view class="friend-title">{{item.friendTitle}}</view>
                             <view class="last-message">
-                                <text>{{item.lastMessage}}</text>
+                                {{item.lastMessage}}
                             </view>
                         </view>
                         <view class="tail">

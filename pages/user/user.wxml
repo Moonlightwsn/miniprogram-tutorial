@@ -1,1 +1,41 @@
-<!--pages/user/user.wxml-->
+<view data-weui-theme="light">
+  <view class="card">
+    
+  </view>
+  <mp-cells extClass="classification">
+    <mp-cell extClass="item" link>
+      <image slot="title" class="title" src="/images/pay.png" />
+      <view>支付</view>
+    </mp-cell>
+  </mp-cells>
+  <mp-cells extClass="classification">
+    <mp-cell extClass="item" link>
+      <image slot="title" class="title" src="/images/collect.png" />
+      <view>收藏</view>
+    </mp-cell>
+    <mp-cell extClass="item" link>
+      <view slot="title" class="title">
+        <mp-icon style="display: inline-flex;" color="#1890ff" size="{{19}}" icon="album"></mp-icon>
+      </view>
+      <view>朋友圈</view>
+    </mp-cell>
+    <mp-cell extClass="item" link>
+      <image slot="title" class="title" src="/images/wallet.png" />
+      <view>卡包</view>
+    </mp-cell>
+    <mp-cell extClass="item" link>
+      <view slot="title" class="title">
+        <mp-icon style="display: inline-flex;" color="#fa8c16" size="{{19}}" icon="sticker"></mp-icon>
+      </view>
+      <view>表情</view>
+    </mp-cell>
+  </mp-cells>
+  <mp-cells extClass="classification">
+    <mp-cell extClass="item" link>
+      <view slot="title" class="title">
+        <mp-icon style="display: inline-flex;" color="#1890ff" size="{{19}}" icon="setting"></mp-icon>
+      </view>
+      <view>设置</view>
+    </mp-cell>
+  </mp-cells>
+</view>
