@@ -64,6 +64,13 @@
 |app.json|全局配置|
 |app.wxss|全局样式|
 
+|字段|格式|作用|
+|---|---|---|
+|pages|string[]|页面申明|
+|usingComponents|object|组件申明|
+|window|object|窗口配置|
+|tabBar|object|底部导航栏配置|
+
 **页面**
 |文件|作用|
 |---|---|
@@ -71,6 +78,34 @@
 |json|页面配置|
 |wxml|页面结构|
 |wxss|页面样式|
+
 > 描述页面的四个文件必须具有相同的路径与文件名
 
 > 以本课程新建的demo项目举例，`index` 页面内的四个文件分别为 `index.js` `index.json` `index.wxml` `index.wxss`
+
+|字段|格式|作用|
+|---|---|---|
+|usingComponents|object|组件申明|
+|navigationBarTitleText|string|窗口标题|
+
+**工具**
+|文件|作用|
+|---|---|
+|project.config.json|开发者工具配置|
+
+|字段|格式|作用|
+|---|---|---|
+|miniprogramRoot|string|指明小程序根目录|
+|appid|string|小程序账号的唯一ID|
+
+***
+
+## 开发者工具
+- 模拟器
+- 编辑器
+- 调试器
+
+***
+
+## 课后作业
+- 申请自己的小程序账号，可以思考一下自己以后想做什么样的小程序，属于什么行业和类别，提供什么样的服务
