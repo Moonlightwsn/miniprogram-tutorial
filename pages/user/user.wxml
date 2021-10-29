@@ -1,7 +1,20 @@
 <view data-weui-theme="light">
-  <view class="card">
-    
-  </view>
+  <image class="card" mode="aspectFill" src="/images/emotion_bg.jpg">
+    <view class="profile">
+      <image class="avatar" src="/images/avatar/avatar_momo.jpg" alt="avatar" />
+      <view class="info">
+        <view>MoMo</view>
+        <view class="wechat-serial">
+          <text style="flex-shrink: 0;">微信号: momomomonononono</text>
+          <view style="flex-grow: 1"></view>
+          <view style="flex-shrink: 0;width: 64px;text-align: right;">
+            <mp-icon icon="qr-code" style="margin-right: 8px;" size="{{14}}" color="rgba(255,255,255,0.65)" />
+            <mp-icon icon="arrow" size="{{12}}" color="rgba(255,255,255,0.65)" />
+          </view>
+        </view>
+      </view>
+    </view>
+  </image>
   <mp-cells extClass="classification">
     <mp-cell extClass="item" link>
       <image slot="title" class="title" src="/images/pay.png" />
