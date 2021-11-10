@@ -1,0 +1,9 @@
+{
+    "component": true,
+    "usingComponents": {
+        "mp-cell": "weui-miniprogram/cell/cell",
+        "mp-slideview": "weui-miniprogram/slideview/slideview",
+        "mp-icon": "weui-miniprogram/icon/icon",
+        "mp-badge": "weui-miniprogram/badge/badge"
+    }
+}

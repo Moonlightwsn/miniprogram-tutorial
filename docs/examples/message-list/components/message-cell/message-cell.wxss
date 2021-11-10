@@ -1,0 +1,72 @@
+.slide-wrapper .action {
+    font-size: 14px;
+}
+.slide-wrapper .action::before {
+    border-left: 0;
+}
+.slide-wrapper .hide-message .weui-slideview__btn {
+    background: #faad14;
+}
+.slide-wrapper .set-unread .weui-slideview__btn {
+    background: #096dd9;
+}
+
+.message {
+    padding: 8px 16px;
+}
+.message .weui-cell__bd {
+    overflow: hidden;
+}
+.message::before {
+    border-top: 0;
+}
+.message .avatar, .message .content, .message .tail {
+    height: 42px;
+}
+.message .avatar-wrapper {
+    position: relative;
+}
+.message .unread {
+    position: absolute;
+}
+.message .unread.dot {
+    top: -3px;
+    right: -3px;
+}
+.message .unread.number {
+    top: -5px;
+    right: -5px;
+}
+.message .avatar {
+    width: 42px;
+    border-radius: 6px;
+}
+.message .content-wrapper {
+    display: flex;
+}
+.message .content {
+    margin-left: 12px;
+    font-weight: normal;
+    flex-grow: 1;
+    overflow: hidden;
+}
+.message .content .friend-title {
+    font-size: 14px;
+}
+.message .content .last-message {
+    min-width: 1px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    color: rgba(0,0,0,0.35);
+}
+.message .tail {
+    flex-shrink: 0;
+    width: 64px;
+    display: flex;
+    flex-direction: column;
+    font-size: 11px;
+    color: rgba(0,0,0,0.35);
+    text-align: right;
+}

@@ -1,0 +1,16 @@
+<view>
+  <message-cells>
+    <message-cell
+      wx:for="{{messageList}}"
+      wx:key="friendID"
+      nickName="{{item.nickName}}"
+      avatar="{{item.avatar}}"
+      unread="{{item.unread}}"
+      bellringOff="{{item.bellringOff}}"
+      lastMessage="{{item.lastMessage}}"
+      lastTime="{{item.lastTime}}"
+      bindtap="clickMe"
+      data-hi="{{item.friendID}}"
+    />
+  </message-cells>
+</view>

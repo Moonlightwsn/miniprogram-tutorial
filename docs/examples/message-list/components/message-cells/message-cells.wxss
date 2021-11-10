@@ -1,0 +1,6 @@
+.messages .weui-cells::before {
+    border-top: 0;
+}
+.messages .weui-cells::after {
+    border-bottom: 0;
+}
