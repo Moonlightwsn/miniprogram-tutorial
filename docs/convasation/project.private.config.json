@@ -1,0 +1,23 @@
+{
+    "condition": {
+        "plugin": {
+            "list": []
+        },
+        "game": {
+            "list": []
+        },
+        "gamePlugin": {
+            "list": []
+        },
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "newFriend",
+                    "pathName": "pages/newFriend/newFriend",
+                    "query": "",
+                    "scene": null
+                }
+            ]
+        }
+    }
+}
