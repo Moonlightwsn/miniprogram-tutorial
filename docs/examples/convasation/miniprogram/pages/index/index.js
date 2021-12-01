@@ -77,6 +77,9 @@ Page({
         data: {
           type: 'getIdentity',
         },
+      }).catch(e => {
+        console.warn(e);
+        return {};
       });
       const { result: { wxid } = {} } = res || {};
       if (wxid) {

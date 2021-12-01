@@ -68,11 +68,39 @@ Page({
     // 搜索结果
     searchFunc: function (value) {
         return new Promise((resolve) => {
-            if (value) resolve([{ text: `搜索: ${value}`, value }]);
+            if (value) resolve([{ text: `添加用户: ${value.substr(0, 16)}...`, value }]);
             else resolve([]);
         })
     },
-    selectResult: function (e) {
-        console.log('select result', e.detail)
+    selectResult: async function (e) {
+        const { item: { value } = {} } = e.detail || {};
+        if (value) {
+            wx.showLoading({
+                title: '正在添加好友',
+            });
+            const res = await wx.cloud.callFunction({
+                name: 'db',
+                data: {
+                    type: 'addFriend',
+                    payload: {
+                        wxid: value,
+                    },
+                },
+            }).catch(e => {
+                console.warn(e);
+                return {};
+            });
+            wx.hideLoading();
+            if (res && res.result && res.result.success) {
+                wx.showToast({
+                  title: '添加好友成功',
+                });
+            } else {
+                wx.showToast({
+                    icon: 'error',
+                    title: '添加好友失败',
+                });
+            }
+        }
     },
 })

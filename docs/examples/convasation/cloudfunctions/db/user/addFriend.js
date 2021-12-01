@@ -11,34 +11,77 @@ const _ = db.command;
 exports.main = async (payload) => {
     const wxContext = cloud.getWXContext();
     const { OPENID } = wxContext;
-    const { wxid } = payload;
-    const res = { success: true };
-    if (wxid) {
-        /**
-         * 在小程序页面交互中保证：
-         * 1. 搜索的wxid对应的用户确实存在
-         * 2. 搜索的wxid并不在当前好友关系中
-         * 满足上述条件后，才调用此接口
-         * 因此此接口只需要处理添加用户的逻辑，而不去关心wxid是否存在
-         *  */ 
-        try {
-            const newFriend = await db.collection('user').doc(wxid).get();
-            const { nickName }
-            await db.collection('user').where({
-                _openid: OPENID,
-            }).update({
+    const { wxid } = payload || {};
+    if (!wxid) return {
+        success: false,
+        errorMsg: 'Parameter incomplete'
+    };
+    /**
+     * 1. 判断搜索的wxid对应的用户确实存在
+     * 2. 判断搜索的wxid并不在当前好友关系中
+    **/ 
+    try {
+        const newFriendDoc = db.collection('user').doc(wxid);
+        const mySelfCollection = db.collection('user').where({
+            _openid: OPENID,
+        });
+
+        const { data: newFriend } = (await newFriendDoc.get()) || {};
+        if (!newFriend) return {
+            success: false,
+            errorMsg: 'User not exist',
+        };
+        let { data: mySelf = [] } = (await mySelfCollection.get()) || {};
+        if (Array.isArray(mySelf) && mySelf.length === 1) mySelf = mySelf[0];
+
+        // 不需要添加好友确认，直接给双方加上好友关系
+        let newAction = 0;
+        if (!newFriend.friends.some(item => item.friendID === mySelf.wxid)) {
+            newAction += 1;
+            await newFriendDoc.update({
                 data: {
                     friends: _.push({
-                        friends: wxid,
-
+                        friendID: mySelf.wxid,
+                        nickName: mySelf.nickName,
+                        avatar: mySelf.avatarUrl,
                     }),
                 },
             });
-        } catch (e) {
-            res.error = e;
-            res.errorMsg = e.message;
         }
-    } else {
-        res.errorMsg = 'Parameter incomplete';
+
+        if (!mySelf.friends.some(item => item.friendID === wxid)) {
+            newAction += 1;
+            await mySelfCollection.update({
+                data: {
+                    friends: _.push({
+                        friendID: wxid,
+                        nickName: newFriend.nickName,
+                        avatar: newFriend.avatarUrl,
+                    }),
+                },
+            });
+        }
+
+        if (newAction === 2) {
+            // 如果是新添加好友，则由主动加好友方给被加方发送一条消息
+            await db.collection('messages').add({
+                data: {
+                    from: mySelf.wxid,
+                    to: wxid,
+                    message: '我们已经是新的朋友啦，开始跟我聊天吧~',
+                    timestamp: new Date().getTime(),
+                },
+            });
+        }
+
+        return {
+            success: true,
+        };
+    } catch (e) {
+        return {
+            success: false,
+            error: e,
+            errorMsg: e.message,
+        };
     }
 };

@@ -15,23 +15,24 @@
 
 .userInfo .avatarWrapper {
     position: relative;
+    margin: 20rpx 0;
 }
 
 .userInfo .avatarWrapper .loadingIcon {
     position: absolute;
-    top: 4px;
-    left: -4px;
-    height: 62px;
-    width: 62px;
+    top: -5px;
+    left: -5px;
+    height: 74px;
+    width: 74px;
     animation: mui-icon-keyframes-rotate 1.4s linear infinite;
 }
 
 .userInfo .avatarWrapper .avatar {
     overflow: hidden;
-    width: 128rpx;
-    height: 128rpx;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
-    margin: 20rpx 0;
+    margin: 0;
 }
 
 .login {

@@ -39,7 +39,10 @@ Page({
             avatarUrl,
           },
         },
-      });
+      }).catch(e => {
+        console.warn(e);
+        return {};
+      });;
       if (res && res.result && res.result.wxid) {
         app.globalData.wxid = res.result.wxid;
         setTimeout(() => {

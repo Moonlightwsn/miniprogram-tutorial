@@ -1,4 +1,5 @@
 const register = require('./user/register');
+const addFriend = require('./user/addFriend');
 
 // 云函数入口函数
 exports.main = async (event) => {
@@ -6,5 +7,7 @@ exports.main = async (event) => {
     switch (type) {
         case 'register':
             return await register.main(payload);
+        case 'addFriend':
+            return await addFriend.main(payload);
     }
 }
