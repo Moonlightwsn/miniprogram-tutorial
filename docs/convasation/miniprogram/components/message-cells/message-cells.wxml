@@ -1,5 +1,5 @@
 <view class="messages-wrapper">
-    <mp-cells extClass="messages" title="HEADER" footer="FOOTER">
+    <mp-cells extClass="messages">
         <slot />
     </mp-cells>
 </view>

@@ -1,0 +1,26 @@
+/* pages/newFriend/newFriend.wxss */
+page {
+    background-color: #F7F7F7;
+}
+
+.searchBar {
+    background-color: #F7F7F7;
+}
+
+.searchBar, .searchBar .weui-search-bar__input, .searchBar .weui-search-bar__label {
+    font-size: 13px;
+}
+
+.searchBar .weui-search-bar__form, .searchBar .weui-search-bar__label {
+    border-radius: 10px;
+    height: 32px;
+    line-height: 32px;
+}
+
+.searchBar .weui-search-bar__input {
+    height: 24px;
+    line-height: 24px;
+    box-sizing: border-box;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}

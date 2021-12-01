@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "mp-icon": "weui-miniprogram/icon/icon",
+    "mp-loading": "weui-miniprogram/loading/loading",
+    "message-cells": "/components/message-cells/message-cells",
+    "message-cell": "/components/message-cell/message-cell"
+  }
+}

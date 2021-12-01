@@ -1,0 +1,18 @@
+<!--login.wxml-->
+<view class="container">
+  <!-- <button type="primary" bindtap="gotoIndex">跳转</button> -->
+  <view class="userInfo">
+    <view class="avatarWrapper">
+      <view class="avatar">
+        <open-data type="userAvatarUrl" />
+      </view>
+      <image wx:if="{{logging}}" src="../../assets/icons/loading.svg" class="loadingIcon" />
+    </view>
+    <view class="nickName">
+      <open-data type="userNickName" />
+    </view>
+  </view>
+  <view class="login">
+    <button disabled="{{logging}}" type="primary" size="mini" bindtap="getIdentity">登 录</button>
+  </view>
+</view>

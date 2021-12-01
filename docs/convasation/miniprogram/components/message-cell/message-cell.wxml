@@ -1,0 +1,25 @@
+<mp-slideview extClass="slide-wrapper" buttons="{{actions}}">
+    <mp-cell extClass="message">
+        <view slot="title" class="avatar-wrapper">
+            <image class="avatar" slot="icon" src="{{avatar}}" />
+            <mp-badge wx:if="{{unread > 0}}" extClass="unread {{bellringOff ? 'dot' : 'number'}}" content="{{!bellringOff ? unread : ''}}"/>
+        </view>
+        <view class="content-wrapper">
+            <view class="content">
+                <view class="friend-title">
+                    {{nickName}}
+                </view>
+                <view class="last-message">
+                    {{lastMessage}}
+                </view>
+            </view>
+            <view class="tail">
+                <view class="time">{{lastTime}}</view>
+                <view style="flex-grow: 1;"></view>
+                <view wx:if="{{bellringOff}}" class="status">
+                    <mp-icon icon="bellring-off" size="{{12}}" color="rgba(0,0,0,0.45)"></mp-icon>
+                </view>
+            </view>
+        </view>
+    </mp-cell>
+</mp-slideview>

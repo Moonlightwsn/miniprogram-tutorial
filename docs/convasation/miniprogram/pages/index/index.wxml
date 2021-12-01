@@ -1,0 +1,26 @@
+<view>
+  <!-- <button type="primary" bindtap="gotoLogin">跳转</button> -->
+  <view wx:if="{{loading}}">
+    <mp-loading extClass="myLoading" />
+  </view>
+  <view wx:else class="header">
+    <view class="title" style="margin-left: 60px;">
+      万信
+    </view>
+    <icon class="icon" type="search" size="18" color="#000" />
+    <mp-icon bindtap="gotoNewFriend" class="icon" icon="add2" size="18" />
+  </view>
+  <message-cells>
+    <message-cell
+      wx:for="{{messageList}}"
+      wx:key="friendID"
+      nickName="{{item.nickName}}"
+      avatar="{{item.avatar}}"
+      unread="{{item.unread}}"
+      bellringOff="{{item.bellringOff}}"
+      lastMessage="{{item.lastMessage}}"
+      lastTime="{{item.lastTime}}"
+      data-hi="{{item.friendID}}"
+    />
+  </message-cells>
+</view>

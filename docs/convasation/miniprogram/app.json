@@ -1,0 +1,20 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/logs/logs",
+        "pages/login/login",
+        "pages/newFriend/newFriend"
+    ],
+    "usingComponents": {},
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#F7F7F7",
+        "navigationBarTitleText": "",
+        "navigationBarTextStyle": "black"
+    },
+    "style": "v2",
+    "useExtendedLib": {
+        "weui": true
+    },
+    "sitemapLocation": "sitemap.json"
+}

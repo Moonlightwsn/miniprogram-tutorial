@@ -1,0 +1,51 @@
+/**login.wxss**/
+.userInfo {
+    padding: 300rpx 0 0 0;
+    width: 100%;
+    flex-grow: 1;
+    color: #aaa;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    background-color: #FFF;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.userInfo .avatarWrapper {
+    position: relative;
+}
+
+.userInfo .avatarWrapper .loadingIcon {
+    position: absolute;
+    top: 4px;
+    left: -4px;
+    height: 62px;
+    width: 62px;
+    animation: mui-icon-keyframes-rotate 1.4s linear infinite;
+}
+
+.userInfo .avatarWrapper .avatar {
+    overflow: hidden;
+    width: 128rpx;
+    height: 128rpx;
+    border-radius: 50%;
+    margin: 20rpx 0;
+}
+
+.login {
+    width: 100%;
+    background-color: #F7F7F7;
+    padding: 100rpx 0 200rpx;
+    text-align: center;
+}
+
+@keyframes mui-icon-keyframes-rotate {
+    0% {
+        transform-origin: 50% 50%;
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,15 @@
+<!--pages/newFriend/newFriend.wxml-->
+<view class="header">
+    <view class="title">
+        添加好友
+    </view>
+</view>
+<view>
+    <mp-searchbar
+        extClass="searchBar"
+        placeholder="输入万信号"
+        bindselectresult="selectResult"
+        search="{{searchFunc}}"
+        cancel="{{false}}"
+    />
+</view>

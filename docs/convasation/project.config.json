@@ -1,4 +1,6 @@
 {
+    "miniprogramRoot": "miniprogram/",
+    "cloudfunctionRoot": "cloudfunctions/",
     "description": "项目配置文件",
     "packOptions": {
         "ignore": [
@@ -9,47 +11,39 @@
         ]
     },
     "setting": {
+        "bundle": false,
+        "userConfirmedBundleSwitch": false,
         "urlCheck": true,
-        "es6": true,
-        "enhance": true,
-        "postcss": true,
-        "preloadBackgroundData": false,
-        "minified": true,
-        "newFeature": false,
-        "coverView": true,
-        "nodeModules": true,
-        "autoAudits": false,
-        "showShadowRootInWxmlPanel": true,
         "scopeDataCheck": false,
-        "uglifyFileName": false,
-        "checkInvalidKey": true,
-        "checkSiteMap": true,
-        "uploadWithSourceMap": true,
+        "coverView": true,
+        "es6": true,
+        "postcss": true,
         "compileHotReLoad": false,
         "lazyloadPlaceholderEnable": false,
+        "preloadBackgroundData": false,
+        "minified": true,
+        "autoAudits": false,
+        "newFeature": false,
+        "uglifyFileName": false,
+        "uploadWithSourceMap": true,
+        "useIsolateContext": true,
+        "nodeModules": false,
+        "enhance": true,
         "useMultiFrameRuntime": true,
         "useApiHook": true,
         "useApiHostProcess": true,
-        "babelSetting": {
-            "ignore": [],
-            "disablePlugins": [],
-            "outputPath": ""
-        },
-        "enableEngineNative": false,
-        "useIsolateContext": true,
-        "userConfirmedBundleSwitch": false,
+        "showShadowRootInWxmlPanel": true,
         "packNpmManually": false,
+        "enableEngineNative": false,
         "packNpmRelationList": [],
         "minifyWXSS": true,
-        "disableUseStrict": false,
-        "minifyWXML": true,
         "showES6CompileOption": false,
-        "useCompilerPlugins": false
+        "minifyWXML": true
     },
     "compileType": "miniprogram",
     "libVersion": "2.21.0",
     "appid": "wx3cfe351ff4edacd2",
-    "projectname": "miniprogram-tutorial",
+    "projectname": "convasation",
     "debugOptions": {
         "hidedInDevtools": []
     },
@@ -59,6 +53,7 @@
         "servePath": ""
     },
     "isGameTourist": false,
+    "cloudfunctionTemplateRoot": "cloudfunctionTemplate",
     "condition": {
         "search": {
             "list": []
