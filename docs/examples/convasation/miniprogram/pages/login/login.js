@@ -14,11 +14,6 @@ Page({
       });
     }
   },
-  gotoIndex() {
-    wx.redirectTo({
-      url: '/pages/index/index',
-    })
-  },
   async getIdentity() {
     this.setData({ logging: true });
     const userProfile = await wx.getUserProfile({

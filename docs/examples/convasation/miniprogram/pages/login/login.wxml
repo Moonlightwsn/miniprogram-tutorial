@@ -1,6 +1,5 @@
 <!--login.wxml-->
 <view class="container">
-  <!-- <button type="primary" bindtap="gotoIndex">跳转</button> -->
   <view class="userInfo">
     <view class="avatarWrapper">
       <view class="avatar">

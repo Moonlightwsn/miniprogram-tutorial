@@ -65,39 +65,92 @@ Page({
       lastTime: '晚上8:20',
     } */],
   },
+  _friendMap: {},
   onLoad() {
     console.log('index onLoad');
-    this.init();
+    // this.init();
+  },
+  onUnload() {
+    app.unWatchMessagesChange();
   },
   async init() {
-    const { wxid } = app.globalData;
+    let { wxid } = app.globalData;
     if (!wxid) {
-      const res = await wx.cloud.callFunction({
-        name: 'common',
-        data: {
-          type: 'getIdentity',
-        },
-      }).catch(e => {
-        console.warn(e);
-        return {};
-      });
-      const { result: { wxid } = {} } = res || {};
-      if (wxid) {
-        app.globalData.wxid = wxid;
-        this.setData({ loading: false });
-      } else {
-        wx.redirectTo({
-          url: '/pages/login/login',
-        });
-      }
-    } else {
+      wxid = await app.init();
+    }
+    if (wxid) {
+      await this.updateFriends();
+      const { recentMessages = [] } = app.globalData;
+      this.classifyMessages(recentMessages);
+      app.watchMessagesChange(this.onMessagesChange.bind(this));
       this.setData({ loading: false });
+    } else {
+      wx.redirectTo({
+        url: '/pages/login/login',
+      });
     }
   },
-  gotoLogin() {
-    wx.redirectTo({
-      url: '/pages/login/login',
-    });
+  async updateFriends() {
+    const { result: { friends = [], success } = {} } = (await wx.cloud.callFunction({
+      name: 'db',
+      data: {
+        type: 'getFriends',
+      },
+    }).catch(e => {
+      console.warn(e);
+      return {};
+    })) || {};
+    if (success && Array.isArray(friends)) {
+      friends.forEach(item => {
+        const { friendID } = item;
+        if (friendID) {
+          this._friendMap[friendID] = {
+            user: item,
+            messages: [],
+          };
+        }
+      });
+    }
+  },
+  async onMessagesChange(newMessages = []) {
+    console.log('onMessagesChange', newMessages);
+    await this.updateFriends();
+    this.classifyMessages(newMessages);
+  },
+  classifyMessages(messages) {
+    const { wxid: mySelf } = app.globalData;
+    if (mySelf && Object.keys(this._friendMap).length > 0 && messages.length > 0) {
+      messages.forEach(item => {
+        const friendID = item.from === mySelf ? item.to : item.from;
+        if (this._friendMap[friendID]) {
+          // 将消息按照归属好友分类
+          const friend = this._friendMap[friendID].user;
+          const updateData = {};
+          if (!friend.lastMessage) {
+            updateData.lastMessage = item.message;
+            updateData.lastTimestamp = item.timestamp;
+            const t = new Date(item.timestamp);
+            updateData.lastTime = `${t.getMonth() + 1}-${t.getDate()}`;
+          }
+          updateData.unread = (friend.unread || 0) + 1;
+          this._friendMap[friendID].user = {
+            ...friend,
+            ...updateData,
+          };
+
+          // 将与对应好友的消息编进一个集合（数组）内
+          this._friendMap[friendID].messages.unshift();
+        }
+      });
+      const newMessageList = Object.keys(this._friendMap).map(fKey => this._friendMap[fKey].user);
+      // 按最后一条消息时间倒序排序
+      newMessageList.sort((a, b) => {
+        return b.lastTimestamp - a.lastTimestamp;
+      });
+      this.setData({
+        messageList: newMessageList,
+      });
+    }
   },
   gotoNewFriend() {
     wx.navigateTo({

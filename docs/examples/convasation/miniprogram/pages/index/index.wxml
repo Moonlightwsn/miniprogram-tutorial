@@ -1,5 +1,4 @@
 <view>
-  <!-- <button type="primary" bindtap="gotoLogin">跳转</button> -->
   <view wx:if="{{loading}}">
     <mp-loading extClass="myLoading" />
   </view>
