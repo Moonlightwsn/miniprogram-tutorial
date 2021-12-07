@@ -17,7 +17,7 @@ exports.main = async (payload) => {
         console.log(wxid, OPENID, user);
         if (user && user._openid === OPENID) {
             // wxid和openid对不上的话，不允许查询最近的消息
-            const { data: messages = [] } = (await db.collection('messages').orderBy('timestamp', 'desc')
+            const { data: messages = [] } = (await db.collection('messages').orderBy('timestamp', 'asc')
                 .limit(num)
                 .where(_.or([
                     {

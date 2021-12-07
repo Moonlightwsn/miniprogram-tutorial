@@ -63,7 +63,7 @@ App({
     if (success && Array.isArray(messages)) {
       this.globalData.recentMessages = messages;
       return {
-        timestamp: messages[0] ? messages[0].timestamp : now,
+        timestamp: messages[messages.length - 1] ? messages[messages.length - 1].timestamp : now,
         messages,
       };
     }
@@ -77,7 +77,7 @@ App({
     const db = wx.cloud.database();
     const _ = db.command;
     const wxid = this.globalData.wxid;
-    messagesWather = db.collection('messages').orderBy('timestamp', 'desc').limit(50).where({
+    messagesWather = db.collection('messages').orderBy('timestamp', 'asc').limit(50).where({
       timestamp: _.gt(timestamp),
     }).where(_.or([
       {
