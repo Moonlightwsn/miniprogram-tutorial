@@ -1,0 +1,16 @@
+page, .weui-cells {
+  background-color: #F7F7F7;
+}
+
+.messages .message .content .content-message {
+  background-color: #FFF;
+  color: #000;
+  border-radius: 6px;
+  line-height: 26px;
+  box-sizing: border-box;
+  padding: 8px 16px;
+}
+
+.messages .message .tail {
+  width: 42px;
+} 

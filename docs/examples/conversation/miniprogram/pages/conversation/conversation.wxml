@@ -1,0 +1,12 @@
+<view>
+  <message-cells>
+    <message-cell
+      wx:for="{{messageList}}"
+      wx:key="_id"
+      nickName="{{item.nickName}}"
+      avatar="{{item.avatar}}"
+      message="{{item.message}}"
+      reverse="{{item.reverse}}"
+    />
+  </message-cells>
+</view>

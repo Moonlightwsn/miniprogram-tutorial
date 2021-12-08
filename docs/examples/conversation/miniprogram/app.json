@@ -3,7 +3,8 @@
         "pages/index/index",
         "pages/logs/logs",
         "pages/login/login",
-        "pages/newFriend/newFriend"
+        "pages/newFriend/newFriend",
+        "pages/conversation/conversation"
     ],
     "usingComponents": {},
     "window": {

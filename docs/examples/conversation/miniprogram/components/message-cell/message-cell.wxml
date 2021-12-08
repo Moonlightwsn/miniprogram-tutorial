@@ -9,12 +9,12 @@
                 <view class="friend-title">
                     {{nickName}}
                 </view>
-                <view class="last-message">
-                    {{lastMessage}}
+                <view class="content-message">
+                    {{message}}
                 </view>
             </view>
             <view class="tail">
-                <view class="time">{{lastTime}}</view>
+                <view class="time">{{tail}}</view>
                 <view style="flex-grow: 1;"></view>
                 <view wx:if="{{bellringOff}}" class="status">
                     <mp-icon icon="bellring-off" size="{{12}}" color="rgba(0,0,0,0.45)"></mp-icon>

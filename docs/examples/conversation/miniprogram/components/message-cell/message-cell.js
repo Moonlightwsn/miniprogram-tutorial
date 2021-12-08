@@ -16,11 +16,11 @@ Component({
             type: String,
             value: '',
         },
-        lastMessage: {
+        message: {
             type: String,
             value: '',
         },
-        lastTime: {
+        tail: {
             type: String,
             value: '',
         }

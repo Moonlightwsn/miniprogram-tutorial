@@ -40,6 +40,8 @@ Page({
       });;
       if (res && res.result && res.result.wxid) {
         app.globalData.wxid = res.result.wxid;
+        app.globalData.avatarUrl = avatarUrl;
+        app.globalData.nickName = nickName;
         setTimeout(() => {
           this.setData({ logging: false });
           wx.redirectTo({

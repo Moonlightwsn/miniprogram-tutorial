@@ -80,17 +80,20 @@ Page({
           updateData.lastTimestamp = msg.timestamp;
           const t = new Date(msg.timestamp);
           updateData.lastTime = `${t.getMonth() + 1}-${t.getDate()}`;
-          console.log(123, friend);
           updateData.unread = (friend.unread || 0) + 1;
           this._friendMap[friendID].user = {
             ...friend,
             ...updateData,
           };
-          console.log(456, this._friendMap);
         }
         // 将与对应好友的消息编进一个集合（数组）内
         // 新消息按照时间升序排列，遍历消息列表时往表尾插入
-        this._friendMap[friendID].messages.push(msg);
+        const isMySelf = msg.from === app.globalData.wxid
+        this._friendMap[friendID].messages.push({
+          ...msg,
+          isMySelf,
+          avatar: isMySelf ? app.globalData.avatarUrl : this._friendMap[friendID].avatarUrl,
+        });
       });
 
       const newMessageList = Object.keys(this._friendMap).map(fKey => this._friendMap[fKey].user);

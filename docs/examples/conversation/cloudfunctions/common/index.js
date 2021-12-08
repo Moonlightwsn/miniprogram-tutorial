@@ -19,6 +19,8 @@ exports.main = async (event) => {
         if (Array.isArray(data) && data.length === 1) {
             return {
                 wxid: data[0].wxid,
+                nickName: data[0].nickName,
+                avatarUrl: data[0].avatarUrl,
             };
         }
         return {};

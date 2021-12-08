@@ -17,8 +17,8 @@
       avatar="{{item.avatar}}"
       unread="{{item.unread}}"
       bellringOff="{{item.bellringOff}}"
-      lastMessage="{{item.lastMessage}}"
-      lastTime="{{item.lastTime}}"
+      message="{{item.lastMessage}}"
+      tail="{{item.lastTime}}"
       data-hi="{{item.friendID}}"
     />
   </message-cells>

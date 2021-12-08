@@ -53,7 +53,7 @@
 .message .content .friend-title {
     font-size: 14px;
 }
-.message .content .last-message {
+.message .content .content-message {
     min-width: 1px;
     overflow: hidden;
     white-space: nowrap;

@@ -21,6 +21,12 @@ App({
     // if (messagesWather) messagesWather.close();
   },
   async init() {
+    /*
+    wx.redirectTo({
+      url: '/pages/conversation/conversation',
+    });
+    return;
+    */
     if (!this.globalData.appInit) {
       this.globalData.appInit = true;
       const res = await wx.cloud.callFunction({
@@ -32,9 +38,11 @@ App({
         console.warn(e);
         return {};
       });
-      const { result: { wxid } = {} } = res || {};
+      const { result: { wxid, nickName, avatarUrl } = {} } = res || {};
       if (wxid) {
         this.globalData.wxid = wxid;
+        this.globalData.avatarUrl = avatarUrl;
+        this.globalData.nickName = nickName;
         // 初始化完成（即拿到自己的wxid）后，先获取最近的20条消息，然后开始监听实时消息
         const recent = await this.getRecentMessages(wxid);
         const { timestamp } = recent;
