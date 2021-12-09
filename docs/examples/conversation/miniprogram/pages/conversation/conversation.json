@@ -1,6 +1,4 @@
 {
   "usingComponents": {
-    "message-cells": "/components/message-cells/message-cells",
-    "message-cell": "/components/message-cell/message-cell"
   }
 }

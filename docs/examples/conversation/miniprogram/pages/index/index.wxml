@@ -20,6 +20,7 @@
       message="{{item.lastMessage}}"
       tail="{{item.lastTime}}"
       data-hi="{{item.friendID}}"
+      bindtap="gotoConversation"
     />
   </message-cells>
 </view>

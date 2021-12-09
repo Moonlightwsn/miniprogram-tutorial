@@ -1,12 +1,15 @@
-<view>
-  <message-cells>
-    <message-cell
-      wx:for="{{messageList}}"
-      wx:key="_id"
-      nickName="{{item.nickName}}"
-      avatar="{{item.avatar}}"
-      message="{{item.message}}"
-      reverse="{{item.reverse}}"
-    />
-  </message-cells>
+<view class="container">
+  <view class="messages">
+    <view wx:for="{{messageList}}" wx:key="_id" class="message {{item.isMySelf ? 'reverse' : ''}}">
+      <image class="avatar" src="{{item.avatar}}" />
+      <view class="content">
+        {{item.message}}
+      </view>
+      <view class="tail"></view>
+    </view>
+  </view>
+  <view class="inputArea">
+    <input type="text" model:value="{{message}}" />
+    <button loading="{{sending}}" disabled="{{sending}}" type="primary" size="mini" bindtap="sendMessage">发送</button>
+  </view>
 </view>

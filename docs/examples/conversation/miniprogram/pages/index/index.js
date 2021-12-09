@@ -1,13 +1,13 @@
 // index.js
+const { classifyMessages, friendMap: _friendMap } = require('../../utils/util');
 // 获取应用实例
-const app = getApp()
+const app = getApp();
 
 Page({
   data: {
     loading: true,
     messageList: [],
   },
-  _friendMap: {},
   onLoad() {
     console.log('index onLoad');
     this.init();
@@ -23,9 +23,9 @@ Page({
     if (wxid) {
       await this.updateFriends();
       const { recentMessages = [] } = app.globalData;
-      this.classifyMessages(recentMessages);
+      const { friendMessageList } = classifyMessages(app, recentMessages);
       app.watchMessagesChange(this.onMessagesChange.bind(this));
-      this.setData({ loading: false });
+      this.setData({ loading: false, messageList: friendMessageList });
     } else {
       wx.redirectTo({
         url: '/pages/login/login',
@@ -46,16 +46,16 @@ Page({
       friends.forEach(item => {
         const { friendID } = item;
         if (friendID) {
-          if (!this._friendMap[friendID]) {
-            this._friendMap[friendID] = {
+          if (!_friendMap[friendID]) {
+            _friendMap[friendID] = {
               user: item,
               messages: [],
             };
           } else {
-            this._friendMap[friendID] = {
-              ...this._friendMap[friendID],
+            _friendMap[friendID] = {
+              ..._friendMap[friendID],
               ...item,
-              unread: this._friendMap[friendID].unread || 0,
+              unread: _friendMap[friendID].unread || 0,
             }
           }
         }
@@ -65,50 +65,20 @@ Page({
   async onMessagesChange(newMessages = []) {
     console.log('onMessagesChange', newMessages);
     await this.updateFriends();
-    this.classifyMessages(newMessages);
-  },
-  classifyMessages(messages) {
-    const { wxid: mySelf } = app.globalData;
-    if (mySelf && Object.keys(this._friendMap).length > 0 && messages.length > 0) {
-      messages.forEach(msg => {
-        const friendID = msg.from === mySelf ? msg.to : msg.from;
-        if (this._friendMap[friendID]) {
-          // 将消息按照归属好友分类
-          const friend = this._friendMap[friendID].user;
-          const updateData = {};
-          updateData.lastMessage = msg.message;
-          updateData.lastTimestamp = msg.timestamp;
-          const t = new Date(msg.timestamp);
-          updateData.lastTime = `${t.getMonth() + 1}-${t.getDate()}`;
-          updateData.unread = (friend.unread || 0) + 1;
-          this._friendMap[friendID].user = {
-            ...friend,
-            ...updateData,
-          };
-        }
-        // 将与对应好友的消息编进一个集合（数组）内
-        // 新消息按照时间升序排列，遍历消息列表时往表尾插入
-        const isMySelf = msg.from === app.globalData.wxid
-        this._friendMap[friendID].messages.push({
-          ...msg,
-          isMySelf,
-          avatar: isMySelf ? app.globalData.avatarUrl : this._friendMap[friendID].avatarUrl,
-        });
-      });
-
-      const newMessageList = Object.keys(this._friendMap).map(fKey => this._friendMap[fKey].user);
-      // 按最后一条消息时间倒序排序
-      newMessageList.sort((a, b) => {
-        return b.lastTimestamp - a.lastTimestamp;
-      });
-      this.setData({
-        messageList: newMessageList,
-      });
-    }
+    const { friendMessageList } = classifyMessages(app, newMessages);
+    this.setData({
+      messageList: friendMessageList,
+    });
   },
   gotoNewFriend() {
     wx.navigateTo({
       url: '/pages/newFriend/newFriend',
     });
-  }
+  },
+  gotoConversation(event) {
+    console.log(event);
+    wx.navigateTo({
+      url: `/pages/conversation/conversation?friendID=${event.target.dataset.hi}`,
+    });
+;  },
 })

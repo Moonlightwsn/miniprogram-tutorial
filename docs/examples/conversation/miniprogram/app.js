@@ -96,11 +96,12 @@ App({
       }
     ])).watch({
       onChange: (snapshot) => {
-        const { id, docs = [] } = snapshot || {};
-        console.log('snapshot', snapshot, id, docs, messagesListener);
+        const { wxid: mySelf } = this.globalData;
+        const { id, docChanges = [] } = snapshot || {};
+        console.log('snapshot', snapshot, id, docChanges, messagesListener);
         if (id > this._messageId && typeof messagesListener === 'function') {
           this._messageId += 1;
-          messagesListener(docs);
+          messagesListener(docChanges.map(item => item.doc).filter(msg => msg.from !== mySelf));
         }
       },
       onError: (err) => {
